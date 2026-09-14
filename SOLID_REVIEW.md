@@ -136,6 +136,23 @@ ui/screens/items/ItemListScreen.kt
 
 ui/screens/items/ItemDetailScreen.kt.
 
+### Выполненное исправление 4
+
+Функция ListScreen вынесена из MainActivity.kt
+в ui/screens/items/ItemListScreen.kt.
+
+Функция DetailScreen вынесена из MainActivity.kt
+в ui/screens/items/ItemDetailScreen.kt.
+
+AppNavigation.kt теперь использует ItemListScreen и ItemDetailScreen
+из пакета ui.screens.items.
+
+MainActivity.kt больше не содержит интерфейс основной CRUD-части
+приложения.
+
+Связанный коммит:
+`refactor: CRUD экраны вынесены из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема

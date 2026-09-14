@@ -13,14 +13,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navDeepLink
 import com.example.practica_1.BottomSheetScreen
-import com.example.practica_1.DetailScreen
+import com.example.practica_1.ui.screens.items.ItemDetailScreen
 import com.example.practica_1.DialogScreen
 import com.example.practica_1.DynamicScreen
 import com.example.practica_1.FormScreen
 import com.example.practica_1.GridScreen
 import com.example.practica_1.HomeInnerScreen
 import com.example.practica_1.HomeMainScreen
-import com.example.practica_1.ListScreen
+import com.example.practica_1.ui.screens.items.ItemListScreen
 import com.example.practica_1.ProfileMainScreen
 import com.example.practica_1.ProfileSettingsScreen
 import com.example.practica_1.repository.ItemRepository
@@ -63,7 +63,7 @@ fun RootNavHost(
         }
     ) {
         composable(RootRoute.List.route) {
-            ListScreen(
+            ItemListScreen(
                 viewModel = viewModel,
                 onItemClick = { id ->
                     navController.navigate("detail/$id")
@@ -99,7 +99,7 @@ fun RootNavHost(
                 ?.toIntOrNull()
                 ?: 0
 
-            DetailScreen(
+            ItemDetailScreen(
                 viewModel = viewModel,
                 itemId = id,
                 onBack = {
