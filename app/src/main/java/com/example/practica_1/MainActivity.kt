@@ -30,10 +30,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -44,15 +40,12 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -82,6 +75,9 @@ import com.example.practica_1.viewmodel.ItemViewModel
 import com.example.practica_1.viewmodel.ItemViewModelFactory
 import kotlinx.coroutines.launch
 import com.example.practica_1.navigation.RootRoute
+import com.example.practica_1.ui.components.AppTopBar
+import com.example.practica_1.ui.components.BottomBar
+import com.example.practica_1.ui.components.titleForRoute
 
 class MainActivity : ComponentActivity() {
 
@@ -145,109 +141,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun AppTopBar(
-    title: String,
-    canNavigateBack: Boolean,
-    onBack: () -> Unit
-) {
-    TopAppBar(
-        title = {
-            Text(title)
-        },
-        navigationIcon = {
-            if (canNavigateBack) {
-                IconButton(onClick = onBack) {
-                    Icon(
-                        imageVector = Icons.Default.List,
-                        contentDescription = "Назад"
-                    )
-                }
-            }
-        },
-        actions = {
-            IconButton(onClick = { }) {
-                Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = "Настройки"
-                )
-            }
-        }
-    )
-}
 
-fun titleForRoute(route: String?): String = when {
-    route == null -> "Навигация"
-    route.startsWith("list") -> "Список"
-    route.startsWith("detail") -> "Детали"
-    route.startsWith("form") -> "Форма ввода"
-    route.startsWith("grid") -> "Сетка"
-    route.startsWith("dynamic") -> "Динамический экран"
-    route.startsWith("home_main") -> "Главная"
-    route.startsWith("home_inner") -> "Домашний внутренний"
-    route.startsWith("profile_main") -> "Профиль"
-    route.startsWith("profile_settings") -> "Настройки профиля"
-    route.startsWith("dialog") -> "Диалог"
-    route.startsWith("bottom_sheet") -> "Bottom Sheet"
-    else -> "Приложение"
-}
-
-data class BottomItem(
-    val route: String,
-    val label: String,
-    val icon: ImageVector
-)
-
-@Composable
-fun BottomBar(navController: NavHostController) {
-    val bottomItems = listOf(
-        BottomItem(
-            route = RootRoute.HomeRoot.route,
-            label = "Home",
-            icon = Icons.Default.Home
-        ),
-        BottomItem(
-            route = RootRoute.ProfileRoot.route,
-            label = "Profile",
-            icon = Icons.Default.Person
-        )
-    )
-
-    val backStackEntry by navController.currentBackStackEntryAsState()
-    val currentDestination = backStackEntry?.destination
-
-    NavigationBar {
-        bottomItems.forEach { item ->
-            NavigationBarItem(
-                selected = currentDestination
-                    ?.hierarchy
-                    ?.any { destination ->
-                        destination.route == item.route
-                    } == true,
-                onClick = {
-                    navController.navigate(item.route) {
-                        popUpTo(navController.graph.findStartDestination().id) {
-                            saveState = true
-                        }
-
-                        launchSingleTop = true
-                        restoreState = true
-                    }
-                },
-                icon = {
-                    Icon(
-                        imageVector = item.icon,
-                        contentDescription = item.label
-                    )
-                },
-                label = {
-                    Text(item.label)
-                }
-            )
-        }
-    }
-}
 
 @Composable
 fun RootNavHost(

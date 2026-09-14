@@ -71,6 +71,20 @@ ui/components/AppTopBar.kt.
 Вынести BottomItem и BottomBar в файл
 ui/components/BottomBar.kt.
 
+### Выполненное исправление 2
+
+Компоненты AppTopBar и titleForRoute вынесены
+в файл ui/components/AppTopBar.kt.
+
+Модель BottomItem и компонент BottomBar вынесены
+в файл ui/components/BottomBar.kt.
+
+MainActivity.kt теперь использует готовые навигационные компоненты,
+но не реализует их самостоятельно.
+
+Связанный коммит:
+`refactor: навигационные панели вынесены из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
