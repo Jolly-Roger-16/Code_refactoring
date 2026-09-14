@@ -99,6 +99,18 @@ MainActivity.kt теперь использует готовые навигац�
 Вынести функцию RootNavHost в отдельный файл
 navigation/AppNavigation.kt.
 
+### Выполненное исправление 3
+
+Функция RootNavHost вынесена из MainActivity.kt
+в файл navigation/AppNavigation.kt.
+
+Файл MainActivity.kt теперь отвечает за создание основного
+Compose-интерфейса и передачу зависимостей в граф навигации,
+а описание маршрутов и переходов находится в навигационном слое.
+
+Связанный коммит:
+`refactor: граф навигации вынесен из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
