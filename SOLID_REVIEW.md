@@ -54,6 +54,23 @@
 Связанный коммит:
 `refactor: маршруты вынесены из MainActivity`
 
+### Проблема 2: компоненты навигационного интерфейса находятся в MainActivity.kt
+
+В MainActivity.kt находятся функции AppTopBar и BottomBar,
+а также модель BottomItem и функция titleForRoute.
+
+Эти элементы отвечают за отображение навигационного интерфейса,
+а не за запуск Android Activity. Поэтому они являются отдельной
+причиной для изменения файла MainActivity.kt.
+
+### План исправления
+
+Вынести AppTopBar и titleForRoute в файл
+ui/components/AppTopBar.kt.
+
+Вынести BottomItem и BottomBar в файл
+ui/components/BottomBar.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
