@@ -153,6 +153,24 @@ MainActivity.kt больше не содержит интерфейс основ
 Связанный коммит:
 `refactor: CRUD экраны вынесены из MainActivity`
 
+### Проблема 5: экраны Home находятся в MainActivity.kt
+
+Функции HomeMainScreen и HomeInnerScreen реализуют интерфейс
+раздела Home, однако находятся в MainActivity.kt.
+
+Они не относятся к запуску Activity и являются самостоятельной
+частью пользовательского интерфейса.
+
+### План исправления
+
+Вынести экран HomeMainScreen в файл:
+
+ui/screens/home/HomeMainScreen.kt
+
+Вынести экран HomeInnerScreen в файл:
+
+ui/screens/home/HomeInnerScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
