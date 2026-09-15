@@ -293,49 +293,6 @@ fun DynamicScreen(onBack: () -> Unit) {
     }
 }
 
-@Composable
-fun HomeMainScreen(
-    onOpenInner: () -> Unit,
-    onOpenList: () -> Unit
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "Домашний экран",
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-        Button(onClick = onOpenInner) {
-            Text("Перейти на внутренний экран Home")
-        }
-
-        OutlinedButton(onClick = onOpenList) {
-            Text("Перейти к экрану списка")
-        }
-    }
-}
-
-@Composable
-fun HomeInnerScreen(onBack: () -> Unit) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Text("Внутренний экран Home")
-
-        Button(onClick = onBack) {
-            Text("Назад")
-        }
-    }
-}
 
 @Composable
 fun ProfileMainScreen(
