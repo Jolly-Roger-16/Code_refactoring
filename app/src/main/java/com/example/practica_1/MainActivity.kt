@@ -109,72 +109,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun DynamicScreen(onBack: () -> Unit) {
-    var count by remember {
-        mutableStateOf(5)
-    }
 
-    val dynamicItems = remember(count) {
-        (1..count).map { number ->
-            "Элемент №$number"
-        }
-    }
-
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ) {
-            Button(
-                onClick = {
-                    if (count < 20) {
-                        count++
-                    }
-                }
-            ) {
-                Text("+")
-            }
-
-            Button(
-                onClick = {
-                    if (count > 1) {
-                        count--
-                    }
-                }
-            ) {
-                Text("-")
-            }
-        }
-
-        LazyColumn(
-            modifier = Modifier.weight(1f)
-        ) {
-            items(dynamicItems) { text ->
-                ListItem(
-                    headlineContent = {
-                        Text(text)
-                    }
-                )
-
-                HorizontalDivider()
-            }
-        }
-
-        OutlinedButton(
-            onClick = onBack,
-            modifier = Modifier
-                .padding(8.dp)
-                .align(Alignment.CenterHorizontally)
-        ) {
-            Text("Назад")
-        }
-    }
-}
 
 @Composable
 fun DialogScreen(

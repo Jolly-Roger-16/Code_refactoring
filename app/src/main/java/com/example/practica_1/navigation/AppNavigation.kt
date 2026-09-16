@@ -14,7 +14,7 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.navDeepLink
 import com.example.practica_1.BottomSheetScreen
 import com.example.practica_1.DialogScreen
-import com.example.practica_1.DynamicScreen
+import com.example.practica_1.ui.screens.dynamic.DynamicScreen
 import com.example.practica_1.ui.screens.grid.GridScreen
 import com.example.practica_1.repository.ItemRepository
 import com.example.practica_1.ui.screens.form.FormScreen

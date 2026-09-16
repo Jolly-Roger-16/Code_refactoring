@@ -289,6 +289,20 @@ MainActivity должна отвечать за создание Activity, на�
 
 ui/screens/dynamic/DynamicScreen.kt.
 
+### Выполненное исправление 9
+
+Функция DynamicScreen вынесена из MainActivity.kt
+в файл ui/screens/dynamic/DynamicScreen.kt.
+
+AppNavigation.kt импортирует динамический экран из пакета
+ui.screens.dynamic.
+
+MainActivity.kt больше не содержит реализацию UI-экрана
+динамического списка.
+
+Связанный коммит:
+`refactor: динамический экран вынесен из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
