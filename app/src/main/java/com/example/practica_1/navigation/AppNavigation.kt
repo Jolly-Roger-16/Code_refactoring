@@ -15,15 +15,15 @@ import androidx.navigation.navDeepLink
 import com.example.practica_1.BottomSheetScreen
 import com.example.practica_1.DialogScreen
 import com.example.practica_1.DynamicScreen
-import com.example.practica_1.ui.screens.form.FormScreen
-import com.example.practica_1.GridScreen
-import com.example.practica_1.ui.screens.profile.ProfileMainScreen
-import com.example.practica_1.ui.screens.profile.ProfileSettingsScreen
+import com.example.practica_1.ui.screens.grid.GridScreen
 import com.example.practica_1.repository.ItemRepository
+import com.example.practica_1.ui.screens.form.FormScreen
 import com.example.practica_1.ui.screens.home.HomeInnerScreen
 import com.example.practica_1.ui.screens.home.HomeMainScreen
 import com.example.practica_1.ui.screens.items.ItemDetailScreen
 import com.example.practica_1.ui.screens.items.ItemListScreen
+import com.example.practica_1.ui.screens.profile.ProfileMainScreen
+import com.example.practica_1.ui.screens.profile.ProfileSettingsScreen
 import com.example.practica_1.viewmodel.ItemViewModel
 import com.example.practica_1.viewmodel.ItemViewModelFactory
 

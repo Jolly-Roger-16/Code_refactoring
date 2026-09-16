@@ -262,6 +262,19 @@ MainActivity должна отвечать за создание Activity, на�
 
 ui/screens/grid/GridScreen.kt.
 
+### Выполненное исправление 8
+
+Функция GridScreen вынесена из MainActivity.kt
+в файл ui/screens/grid/GridScreen.kt.
+
+AppNavigation.kt импортирует экран сетки из пакета
+ui.screens.grid.
+
+MainActivity.kt больше не содержит реализацию UI-экрана сетки.
+
+Связанный коммит:
+`refactor: экран сетки вынесен из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
