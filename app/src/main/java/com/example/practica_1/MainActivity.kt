@@ -33,7 +33,6 @@ import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -288,85 +287,6 @@ fun DynamicScreen(onBack: () -> Unit) {
                 .padding(8.dp)
                 .align(Alignment.CenterHorizontally)
         ) {
-            Text("Назад")
-        }
-    }
-}
-
-
-@Composable
-fun ProfileMainScreen(
-    onOpenSettings: () -> Unit
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = "Профиль пользователя",
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-        Button(onClick = onOpenSettings) {
-            Text("Открыть настройки профиля")
-        }
-    }
-}
-
-@Composable
-fun ProfileSettingsScreen(onBack: () -> Unit) {
-    var notificationsEnabled by remember {
-        mutableStateOf(true)
-    }
-
-    var darkTheme by remember {
-        mutableStateOf(false)
-    }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "Уведомления",
-                modifier = Modifier.weight(1f)
-            )
-
-            Switch(
-                checked = notificationsEnabled,
-                onCheckedChange = {
-                    notificationsEnabled = it
-                }
-            )
-        }
-
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Text(
-                text = "Тёмная тема",
-                modifier = Modifier.weight(1f)
-            )
-
-            Switch(
-                checked = darkTheme,
-                onCheckedChange = {
-                    darkTheme = it
-                }
-            )
-        }
-
-        Spacer(modifier = Modifier.weight(1f))
-
-        OutlinedButton(onClick = onBack) {
             Text("Назад")
         }
     }

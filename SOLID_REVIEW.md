@@ -205,6 +205,22 @@ ui/screens/profile/ProfileMainScreen.kt
 
 ui/screens/profile/ProfileSettingsScreen.kt.
 
+### Выполненное исправление 6
+
+Функция ProfileMainScreen вынесена из MainActivity.kt
+в файл ui/screens/profile/ProfileMainScreen.kt.
+
+Функция ProfileSettingsScreen вынесена из MainActivity.kt
+в файл ui/screens/profile/ProfileSettingsScreen.kt.
+
+AppNavigation.kt импортирует Profile-экраны из пакета
+ui.screens.profile.
+
+MainActivity.kt больше не содержит UI раздела Profile.
+
+Связанный коммит:
+`refactor: экраны Profile вынесены из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема

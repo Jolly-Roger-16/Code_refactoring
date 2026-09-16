@@ -17,8 +17,8 @@ import com.example.practica_1.DialogScreen
 import com.example.practica_1.DynamicScreen
 import com.example.practica_1.FormScreen
 import com.example.practica_1.GridScreen
-import com.example.practica_1.ProfileMainScreen
-import com.example.practica_1.ProfileSettingsScreen
+import com.example.practica_1.ui.screens.profile.ProfileMainScreen
+import com.example.practica_1.ui.screens.profile.ProfileSettingsScreen
 import com.example.practica_1.repository.ItemRepository
 import com.example.practica_1.ui.screens.home.HomeInnerScreen
 import com.example.practica_1.ui.screens.home.HomeMainScreen
