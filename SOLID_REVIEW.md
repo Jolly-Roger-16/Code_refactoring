@@ -303,6 +303,21 @@ MainActivity.kt больше не содержит реализацию UI-эк�
 Связанный коммит:
 `refactor: динамический экран вынесен из MainActivity`
 
+### Проблема 10: DialogScreen находится в MainActivity.kt
+
+Функция DialogScreen реализует самостоятельный UI-компонент
+диалогового окна, но находится в MainActivity.kt.
+
+MainActivity должна отвечать за создание Activity, настройку темы
+и подключение корневой навигации, а не за реализацию отдельного
+диалогового компонента.
+
+### План исправления
+
+Вынести DialogScreen в отдельный файл:
+
+ui/screens/dialog/DialogScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
