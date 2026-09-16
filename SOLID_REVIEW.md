@@ -171,6 +171,40 @@ ui/screens/home/HomeMainScreen.kt
 
 ui/screens/home/HomeInnerScreen.kt.
 
+### Выполненное исправление 5
+
+Функция HomeMainScreen вынесена из MainActivity.kt
+в файл ui/screens/home/HomeMainScreen.kt.
+
+Функция HomeInnerScreen вынесена из MainActivity.kt
+в файл ui/screens/home/HomeInnerScreen.kt.
+
+AppNavigation.kt импортирует Home-экраны из пакета
+ui.screens.home.
+
+MainActivity.kt больше не содержит UI раздела Home.
+
+Связанный коммит:
+`refactor: экраны Home вынесены из MainActivity`
+
+### Проблема 6: экраны Profile находятся в MainActivity.kt
+
+Функции ProfileMainScreen и ProfileSettingsScreen реализуют
+интерфейс раздела Profile, но находятся в MainActivity.kt.
+
+Они не относятся к запуску Activity и являются самостоятельной
+частью пользовательского интерфейса.
+
+### План исправления
+
+Вынести экран ProfileMainScreen в файл:
+
+ui/screens/profile/ProfileMainScreen.kt
+
+Вынести экран ProfileSettingsScreen в файл:
+
+ui/screens/profile/ProfileSettingsScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
