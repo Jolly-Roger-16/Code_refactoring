@@ -235,6 +235,19 @@ MainActivity должна отвечать за создание Activity, на�
 
 ui/screens/form/FormScreen.kt.
 
+### Выполненное исправление 7
+
+Функция FormScreen вынесена из MainActivity.kt
+в файл ui/screens/form/FormScreen.kt.
+
+AppNavigation.kt импортирует экран формы из пакета
+ui.screens.form.
+
+MainActivity.kt больше не содержит реализацию UI-экрана формы.
+
+Связанный коммит:
+`refactor: экран формы вынесен из MainActivity`
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
