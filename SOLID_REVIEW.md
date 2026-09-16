@@ -248,6 +248,20 @@ MainActivity.kt больше не содержит реализацию UI-эк�
 Связанный коммит:
 `refactor: экран формы вынесен из MainActivity`
 
+### Проблема 8: GridScreen находится в MainActivity.kt
+
+Функция GridScreen реализует самостоятельный UI-экран с сеткой
+карточек, но находится в MainActivity.kt.
+
+MainActivity должна отвечать за создание Activity, настройку темы
+и подключение корневой навигации, а не за интерфейс отдельного экрана.
+
+### План исправления
+
+Вынести GridScreen в отдельный файл:
+
+ui/screens/grid/GridScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
