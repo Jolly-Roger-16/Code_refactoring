@@ -275,6 +275,20 @@ MainActivity.kt больше не содержит реализацию UI-эк�
 Связанный коммит:
 `refactor: экран сетки вынесен из MainActivity`
 
+### Проблема 9: DynamicScreen находится в MainActivity.kt
+
+Функция DynamicScreen реализует самостоятельный UI-экран
+динамического списка, но находится в MainActivity.kt.
+
+MainActivity должна отвечать за создание Activity, настройку темы
+и подключение корневой навигации, а не за интерфейс отдельного экрана.
+
+### План исправления
+
+Вынести DynamicScreen в отдельный файл:
+
+ui/screens/dynamic/DynamicScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
