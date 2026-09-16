@@ -221,6 +221,20 @@ MainActivity.kt больше не содержит UI раздела Profile.
 Связанный коммит:
 `refactor: экраны Profile вынесены из MainActivity`
 
+### Проблема 7: FormScreen находится в MainActivity.kt
+
+Функция FormScreen реализует самостоятельный UI-экран формы,
+но находится в MainActivity.kt.
+
+MainActivity должна отвечать за создание Activity, настройку темы
+и подключение корневой навигации, а не за интерфейс отдельного экрана.
+
+### План исправления
+
+Вынести FormScreen в отдельный файл:
+
+ui/screens/form/FormScreen.kt.
+
 ## O — Open/Closed Principle
 
 ### Найденная проблема
